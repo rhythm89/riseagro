@@ -1,0 +1,26 @@
+<%= render "layouts/page_head"%>
+<div class="row-fluid">
+<%= render "layouts/side_bar"%>
+<div class="span9">
+<div class="row-fluid">
+<div class="row-fluid container-folio">
+<% @user.each do |user| %>
+  <div class="span4">
+    <div class="thumbnail">
+       <%= image_tag user.image.url(:thumb) %>
+		  <div class="caption">
+			<h3 class=""></h3>
+				<p class=""></p><br>
+				  <div class="row-fluid">
+					<div class="span6"></div>
+					  <div class="span6">
+						<a class="btn btn-success btn-block" href="#"><%= user.first_name %> <%= user.last_name %></a>
+						</div>
+							</div>
+						</div> 
+					</div>
+				</div>
+		   <% end %>
+		</div>
+	</div>
+</div>

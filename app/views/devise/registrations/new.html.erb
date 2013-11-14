@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="page-header">
+        <h1 id="pagetitle" style="margin-top: 50px;">Sign up</h1>
+    </div>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+        <div style="margin:0;padding:0;display:inline">
+        <div class="control-group tel optional">
+            <label class="tel optional control-label control-label" for="message_phone">email</label>
+            <div class="controls">
+                <%= f.email_field :email, :autofocus => true %>
+            </div>
+        </div>
+         <div class="control-group tel optional">
+            <label class="tel optional control-label control-label" for="message_phone">First Name</label>
+            <div class="controls">
+                <%= f.text_field :first_name %>
+            </div>
+        </div>
+          <div class="control-group tel optional">
+            <label class="tel optional control-label control-label" for="message_phone">Last Name</label>
+            <div class="controls">
+                <%= f.text_field :last_name %>
+            </div>
+        </div>
+          <div class="control-group tel optional">
+            <label class="tel optional control-label control-label" for="message_phone">Sub Cast</label>
+            <div class="controls">
+                <%= f.text_field :sub_cast %>
+            </div>
+        </div>
+         <div class="control-group tel optional">
+            <label class="tel optional control-label control-label" for="message_phone">Contact Number</label>
+            <div class="controls">
+                <%= f.text_field :mobile_number %>
+            </div>
+        </div>
+           <div class="control-group tel optional">
+            <label class="tel optional control-label control-label" for="message_phone">Date of Birth</label>
+            <div class="controls">
+              <%= date_select("user", "birthday", :start_year => 1985) %>
+            </div>
+        </div>
+         <div class="control-group tel optional">
+            <label class="tel optional control-label control-label" for="message_phone">Address</label>
+            <div class="controls">
+                <%= f.text_area :address,:cols =>"40",:rows => "5" %>
+            </div>
+        </div>
+        <div class="control-group tel optional">
+            <label class="tel optional control-label control-label" for="message_phone">Contact Number</label>
+            <div class="controls">
+                <%= f.file_field :image %>
+            </div>
+        </div>
+        <div class="control-group text optional">
+            <label class="text optional control-label" for="message_message">Password</label>
+        <div class="controls">
+                <%= f.password_field :password %>
+            </div>
+        </div>
+         <div class="control-group text optional">
+            <label class="text optional control-label" for="message_message">Password Confirmation </label>
+        <div class="controls">
+                <%= f.password_field :password_confirmation %>
+            </div>
+        </div>
+        <div id="sendbtn" class="form-actions">
+            <%= f.submit "Sign up" %>
+        </div>
+    <%end%>
+    <%= render "devise/shared/links" %>
+</div>
